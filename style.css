@@ -129,7 +129,7 @@ button {
     transition-duration: 1s;
     background: #59BD88;
     color: white;
-    width: 60px;
+    width: 120px;
     border-radius: 8px;
 }
 
@@ -161,6 +161,9 @@ p {
 }
 h2 {
     font-weight: normal;
+}
+input {
+    background-color:rgb(221, 221, 221);
 }
 
 .stick {

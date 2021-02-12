@@ -2,9 +2,12 @@ document.getElementById("st").addEventListener('click', start);
 
 var advancementlist = ["Gather 3 Wood", "Get An Iron Pickaxe", "Create A Nether Portal", "Get Full Diamond", "Kill 10 Cows/Pigs"
                     , "Kill 10 Cows/Pigs", "Get An Iron Block", "Find a Village And Trade With A Villager", "Find an Ocean Monument"
-                    , "Visit 3 Unique Biomes", "Start a Raid and Finish It", "Create a Dirt Hut", "Find Ancient Debris", "Find An Abandoned Mansion"
-                    , "Find A Mineshaft", "Find 3 Wither Skulls and Prepare to Fight The Wither", "Find a Shipwreck", "Find the Stronghold"
-                    , "Gather 10 Iron Ingots", "Gather 64 Smelted Stone", "Create a piston door", "Barter with a piglin until you get enderpearls"];
+                    , "Visit 3 Unique Biomes", "Start a Raid and Finish It", "Create a Dirt Hut", "Get a Diamond Axe", "Find A Woodland Mansion"
+                    , "Find A Mineshaft", "Kill a Snowman", "Find a Shipwreck", "Find Pigstep and Play It", "Activate a new challenge after 5 Minutes"
+                    , "Gather 10 Iron Ingots", "Gather 64 Smelted Stone", "Create a piston door", "Barter with a piglin until you get enderpearls"
+                    ,"Enchant your current item with Bane of Artheropods", "Tame a parrot", "Get 5 Dogs", "Create a house made entirely with stripped logs"
+                    , "Breed 2 dogs", "Find A Bastion", "Get a Netherite Pick", "Create a TNT Cannon", "Find a revine and remove all visable ores", "Mine Obsidian"
+                    , "Find a ruined portal and obtain a Golden Apple from the chest"];
 var initlist = advancementlist;
 
 document.getElementById("chall").textContent = advancementlist.length + " Challenges Available!";
@@ -23,6 +26,7 @@ function end() {
         <h1>Number of Challenges: ${amount}</h1>
         <h1 style="font-size: 18px;">Refresh The Page To Retry</h1>
         </div><br><br>`
+    document.getElementById("st").innerHTML = "<br><h1>Refresh</h1><br>"
     return;
 }
 
@@ -32,10 +36,9 @@ function start() {
     
     playing = true;
     
-    document.getElementById("st").textContent = "Give Up"
+    document.getElementById("st").innerHTML = "<br><h1>Surrender</h1><br>"
 
-    document.getElementById("st").style.width = "70px";
-    document.getElementById("st").style.fontSize = "19px";
+    document.getElementById("st").style.width = "140px";
     document.getElementById("st").style.background = "#a30707";
     document.getElementById("st").addEventListener('click', end);
 
@@ -111,7 +114,8 @@ function insert() {
             <h1 style="text-decoration: underline;">Results</h1>
             <h1>Number of Challenges: ${amount}</h1>
             <h1 style="font-size: 18px;">Refresh The Page To Retry</h1>
-            </div><br><br>`
+        </div><br><br>`
+        document.getElementById("st").innerHTML = "<br><h1>Refresh</h1><br>"
         return;
     }
     if (document.getElementById(`amount`).value == 0) {
@@ -140,7 +144,7 @@ function insert() {
             <h1 style="text-decoration: underline;">Results</h1>
             <h1>Number of Challenges: ${amount}</h1>
         </div><br><br>`
-        
+        document.getElementById("st").innerHTML = "<br><h1>Refresh</h1><br>"      
         return;
     }
 
