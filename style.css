@@ -108,7 +108,7 @@ html {
     color: white;
     position: relative;
     display: block;
-    background: rgb(87, 87, 87);
+    background: #575757;
     text-align: center;
     font-family: Arial;
 }
@@ -171,5 +171,5 @@ input {
     position: sticky;
     top: 0;
     z-index: 10;
-    background: rgb(78, 78, 78);
+    background: #4e4e4e;
 }
