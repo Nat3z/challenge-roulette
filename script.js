@@ -41,7 +41,7 @@ function start() {
     
     document.getElementById("st").innerHTML = "<br><h1>Surrender</h1><br>"
     document.getElementById("st").style.width = "140px";
-    document.getElementById("st").style.background = "#a30707";
+    document.getElementById("st").style.background = "rgb(136, 19, 21)";
     document.getElementById("st").addEventListener('click', end);
 
     /*
@@ -59,7 +59,7 @@ function start() {
     ins.style.float = "left";
 
     var letter = document.createElement("h1");
-    letter.style.color = "white";
+    letter.style.color = "rgb(87, 87, 87)";
     letter.style.float = "left";
     letter.textContent = "ac"
     document.getElementById("sticky").appendChild(letter);
@@ -76,10 +76,10 @@ function start() {
     ins2.style.float = "left";
     document.getElementById("sticky").appendChild(ins2);
 
-    n("[hrthing]").del();
+    //n("[hrthing]").del();
 
-    var hr = document.createElement("hr");
-    document.getElementById("sticky").appendChild(hr); 
+    //var hr = document.createElement("hr");
+    //document.getElementById("sticky").appendChild(hr); 
 
     var br = document.createElement("br");
     document.body.appendChild(br);
@@ -122,10 +122,10 @@ function insert() {
     }
     if (n("[amount]").val == 0) {
         document.getElementById("numid" + (amount - 1)).innerHTML = document.getElementById("numid" + (amount - 1)).textContent
-        + `<br><h1 style="color: #b3b3b3; font-size: 20px;">`+"0 Advancements While Completing Challenge";
+        + `<br><h1 style="color: rgb(221, 221, 221); font-size: 20px;">`+"0 Advancements While Completing Challenge";
     } else {
         document.getElementById("numid" + (amount - 1)).innerHTML = document.getElementById("numid" + (amount - 1)).textContent
-        + `<br><h1 style="color: #b3b3b3; font-size: 20px;">` + document.getElementById(`amount`).value
+        + `<br><h1 style="color: rgb(221, 221, 221); font-size: 20px;">` + document.getElementById(`amount`).value
         + " Advancements While Completing Challenge";
     }
 
