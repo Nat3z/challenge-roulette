@@ -43,10 +43,6 @@ function start() {
     document.getElementById("st").style.width = "140px";
     document.getElementById("st").style.background = "rgb(136, 19, 21)";
     document.getElementById("st").addEventListener('click', end);
-
-    /*
-    var br10 = document.createElement("br");
-    document.getElementById("sticky").appendChild(br10);*/
     var br19 = document.createElement("br");
     document.getElementById("sticky").appendChild(br19);
     
@@ -75,11 +71,6 @@ function start() {
     ins2.textContent = "Continue"
     ins2.style.float = "left";
     document.getElementById("sticky").appendChild(ins2);
-
-    //n("[hrthing]").del();
-
-    //var hr = document.createElement("hr");
-    //document.getElementById("sticky").appendChild(hr); 
 
     var br = document.createElement("br");
     document.body.appendChild(br);
