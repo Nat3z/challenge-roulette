@@ -1,16 +1,19 @@
+// NJS (Beta)
+/** The Main Function for NJS * @param Brackets Add '[]' around text to label it as an id * @param Astreiks Use '*' to label the entire body * @param Tags Use HTML Tags ex. h1, h2, h3, b, for all tags in the Body */ function n(obj) { if (obj == "*") { return new body(); } if (contains(obj, "[") && contains(obj, "]")) { let o = obj; o = o.replace("[", ""); o = o.replace("]", ""); return new idbased(o); } return new tagbased(obj); } function contains(ob, string) { if (ob.indexOf(string) >= 0) { return true; } return false; } class tagbased { constructor(object) { this.obj = object; } /** * Deletes The Given Object : Tags, IDs */ del() { var element = document.getElementsByTagName(this.obj), index; for (index = element.length - 1; index >= 0; index--) { element[index].parentNode.removeChild(element[index]); } } } class idbased { constructor(object) { this.obj = object; /** * Returns The Value of Text if the ID Provided is an input : IDs */ this.val = document.getElementById(this.obj).value; } del() { document.getElementById(this.obj).remove(); } /** * Resets The Value of Object (Only For Inputs) : IDs */ clear() { document.getElementById(this.obj).value = null; } /** * Sets the text of the given ID : IDs * @param text */ setText(text) { document.getElementById(this.obj).textContent = text; } /** * Sets the HTML of the given ID : IDs * @param HTML */ setHTML(text) { document.getElementById(this.obj).innerHTML = text; } /** * Hides the Current Object */ hide() { document.getElementById(this.obj).style.visibility = "hidden"; } /** * Shows the Current Object */ show() { document.getElementById(this.obj).style.visibility = "visible"; } } class body { /** * Adds content to the Body : Body | * @param HTML */ add(contents) { document.body.innerHTML += contents; } }
+// #######################################
 document.getElementById("st").addEventListener('click', start);
 
 var advancementlist = ["Gather 3 Wood", "Get An Iron Pickaxe", "Create A Nether Portal", "Get Full Diamond", "Kill 10 Cows/Pigs"
-                    , "Kill 10 Cows/Pigs", "Get An Iron Block", "Find a Village And Trade With A Villager", "Find an Ocean Monument"
+                    , "Get An Iron Block", "Find a Village And Trade With A Villager", "Find an Ocean Monument"
                     , "Visit 3 Unique Biomes", "Start a Raid and Finish It", "Create a Dirt Hut", "Get a Diamond Axe", "Find A Woodland Mansion"
-                    , "Find A Mineshaft", "Kill a Snowman", "Find a Shipwreck", "Find Pigstep and Play It", "Activate a new challenge after 5 Minutes"
+                    , "Find A Mineshaft", "Kill a Snowman", "Find a Shipwreck", "Find Pigstep and Play It", "Find and mine coarse dirt"
                     , "Gather 10 Iron Ingots", "Gather 64 Smelted Stone", "Create a piston door", "Barter with a piglin until you get enderpearls"
-                    ,"Enchant your current item with Bane of Artheropods", "Tame a parrot", "Get 5 Dogs", "Create a house made entirely with stripped logs"
+                    ,"Enchant your current item with Bane of Artheropods", "Get 5 Dogs", "Create a house made entirely with stripped logs"
                     , "Breed 2 dogs", "Find A Bastion", "Get a Netherite Pick", "Create a TNT Cannon", "Find a revine and remove all visable ores", "Mine Obsidian"
-                    , "Find a ruined portal and obtain a Golden Apple from the chest"];
+                    , "Find a ruined portal and obtain a Golden Apple from the chest", "Ignite TNT", "Enter the Nether \(If you haven't already\) and find any biome"];
 var initlist = advancementlist;
 
-document.getElementById("chall").textContent = advancementlist.length + " Challenges Available!";
+n("[chall]").setText(advancementlist.length + " Challenges Available!");
 
 var amount = 0;
 var finished = false;
@@ -19,25 +22,24 @@ var playing = false;
 
 function end() {
     finished = true;
-    document.body.innerHTML = document.body.innerHTML + 
-    `<br><br>
-    <div style="font-size: 50px; width: 60%;">
+    n("*").add(`<br><br>
+        <div style="font-size: 50px; width: 60%;">
         <h1 style="text-decoration: underline;">Results</h1>
         <h1>Number of Challenges: ${amount}</h1>
         <h1 style="font-size: 18px;">Refresh The Page To Retry</h1>
-        </div><br><br>`
-    document.getElementById("st").innerHTML = "<br><h1>Refresh</h1><br>"
+        <a href="https://nat3z.github.io/" style="font-size: 17px">nat3z.github.io</a>
+        </div><br><br>`)
+    document.getElementById("st").innerHTML = "<br><h1>Refresh</h1><br>";
     return;
 }
 
 function start() {
     if (playing)
         return;
-    
+    n("[chall]").hide();
     playing = true;
     
     document.getElementById("st").innerHTML = "<br><h1>Surrender</h1><br>"
-
     document.getElementById("st").style.width = "140px";
     document.getElementById("st").style.background = "#a30707";
     document.getElementById("st").addEventListener('click', end);
@@ -74,7 +76,7 @@ function start() {
     ins2.style.float = "left";
     document.getElementById("sticky").appendChild(ins2);
 
-    document.getElementById("hrthing").remove();
+    n("[hrthing]").del();
 
     var hr = document.createElement("hr");
     document.getElementById("sticky").appendChild(hr); 
@@ -104,21 +106,21 @@ function start() {
 }
 
 function insert() {
-    if (finished || document.getElementById("amount").value < 0)
+    if (finished || n("[amount]").val < 0)
         return;
-    if (document.getElementById("amount").value >= initlist.length) {
+    if (n("[amount]").val >= initlist.length) {
         finished = true;
-        document.body.innerHTML = document.body.innerHTML + 
-        `<br><br>
+        n("*").add(`<br><br>
         <div style="font-size: 50px; width: 60%;">
-            <h1 style="text-decoration: underline;">Results</h1>
-            <h1>Number of Challenges: ${amount}</h1>
-            <h1 style="font-size: 18px;">Refresh The Page To Retry</h1>
-        </div><br><br>`
-        document.getElementById("st").innerHTML = "<br><h1>Refresh</h1><br>"
+        <h1 style="text-decoration: underline;">Results</h1>
+        <h1>Number of Challenges: ${amount}</h1>
+        <h1 style="font-size: 18px;">Refresh The Page To Retry</h1>
+        <a href="https://nat3z.github.io/" style="font-size: 17px">nat3z.github.io</a>
+        </div><br><br>`)
+            document.getElementById("st").innerHTML = "<br><h1>Refresh</h1><br>";
         return;
     }
-    if (document.getElementById(`amount`).value == 0) {
+    if (n("[amount]").val == 0) {
         document.getElementById("numid" + (amount - 1)).innerHTML = document.getElementById("numid" + (amount - 1)).textContent
         + `<br><h1 style="color: #b3b3b3; font-size: 20px;">`+"0 Advancements While Completing Challenge";
     } else {
@@ -130,7 +132,7 @@ function insert() {
     var number = Math.floor(Math.random() * advancementlist.length);
     const ref = document.getElementById(`amount`).value;
 
-    document.getElementById("amount").value = null;
+    n("[amount]").clear();
 
 
     const idnum = `numid${amount}`;
@@ -138,13 +140,14 @@ function insert() {
     amount = amount + 1;
     if (advancementlist.length == 0) {
         finished = true;
-        document.body.innerHTML = document.body.innerHTML + 
-        `<br><br>
+        n("*").add(`<br><br>
         <div style="font-size: 50px; width: 60%;">
-            <h1 style="text-decoration: underline;">Results</h1>
-            <h1>Number of Challenges: ${amount}</h1>
-        </div><br><br>`
-        document.getElementById("st").innerHTML = "<br><h1>Refresh</h1><br>"      
+        <h1 style="text-decoration: underline;">Results</h1>
+        <h1>Number of Challenges: ${amount}</h1>
+        <h1 style="font-size: 18px;">Refresh The Page To Retry</h1>
+        <a href="https://nat3z.github.io/" style="font-size: 17px">nat3z.github.io</a>
+        </div><br><br>`)
+            document.getElementById("st").innerHTML = "<br><h1>Refresh</h1><br>"; 
         return;
     }
 
@@ -190,3 +193,4 @@ function stickyfunction() {
     header.classList.remove("stick");
   }
 }
+
