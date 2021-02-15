@@ -112,9 +112,7 @@ html {
     text-align: center;
     font-family: Arial;
 }
-head {
-    transition-duration: 0.7s;
-}
+
 h1 {
     font-size: x-large;
     font-weight: normal;
@@ -150,8 +148,7 @@ div {
 }
 
 header {
-    transition-duration: 0.7s;
-    background: rgb(87, 87, 87);
+    background: #4e4e4e;
     overflow-x: hidden;
     overflow-y: hidden;
     overflow: hidden;
@@ -159,6 +156,9 @@ header {
 
 p {
     float: left;
+}
+a {
+    color: gray;
 }
 h2 {
     font-weight: normal;
