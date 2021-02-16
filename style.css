@@ -160,6 +160,11 @@ p {
 a {
     color: gray;
 }
+.skip {
+    background: #3a76e6;
+    color: white;
+    border-radius: 8px;
+}
 h2 {
     font-weight: normal;
 }
