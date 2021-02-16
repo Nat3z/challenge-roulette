@@ -100,7 +100,7 @@ if (version != null) {
                     , "Breed 2 dogs", "Find A Bastion", "Get a Netherite Pick", "Create a TNT Cannon", "Find a revine and remove all visable ores", "Mine Obsidian"
                     , "Find a ruined portal and obtain a Golden Apple from the chest", "Ignite TNT", "Enter the Nether \(If you haven't already\) and find any biome"];
 
-                    n("[chall]").setText("Skill Based Challenges is disabled if you specify a specific version");
+                    n("[chall]").setText("Skill Based Challenges is disabled if you specify a version");
             break;
         case "1.1":
             advancementlist = ["Gather 3 Wood", "Get An Iron Pickaxe", "Create A Nether Portal", "Get Full Diamond"
@@ -111,6 +111,7 @@ if (version != null) {
                 ,"Enchant your current item with Bane of Artheropods", "Tame a parrot", "Get 5 Dogs", "Create a house made entirely with stripped logs"
                 , "Breed 2 dogs", "Find A Bastion", "Get a Netherite Pick", "Create a TNT Cannon", "Find a revine and remove all visable ores", "Mine Obsidian"
                 , "Find a ruined portal and obtain a Golden Apple from the chest"];
+                n("[chall]").setText("Skill Based Challenges is disabled if you specify a version");
             break;
         case "1.0":
             advancementlist = ["Gather 3 Wood", "Get An Iron Pickaxe", "Create A Nether Portal", "Get Full Diamond", "Kill 10 Cows/Pigs"
@@ -118,6 +119,7 @@ if (version != null) {
                     , "Visit 3 Unique Biomes", "Start a Raid and Finish It", "Create a Dirt Hut", "Find Ancient Debris", "Find An Abandoned Mansion"
                     , "Find A Mineshaft", "Find 3 Wither Skulls and Prepare to Fight The Wither", "Find a Shipwreck", "Find the Stronghold"
                     , "Gather 10 Iron Ingots", "Gather 64 Smelted Stone", "Create a piston door", "Barter with a piglin until you get enderpearls"];
+                    n("[chall]").setText("Skill Based Challenges is disabled if you specify a specific version");
             break;
         
     }
@@ -270,14 +272,14 @@ function insert() {
 
     amount = amount + 1;
 
-    if (amount > 12 && !check1) {
+    if (amount > 12 && !check1 && version == null) {
         advancementlist.push("Create A Nether Portal", "Get Full Diamond", "Find a Village And Trade With A Villager", "Find an Ocean Monument"
         ,"Get a Diamond Axe", "Find A Woodland Mansion", "Get 5 Dogs"
         , "Breed 2 dogs", "Find A Bastion","Find Pigstep and Play It");
         check1 = true;
         initlist = advancementlist;
     }
-    if (amount > 18 && !check2) {
+    if (amount > 18 && !check2 && version == null) {
         advancementlist.push("Start a Raid and Finish It","Create a piston door", "Barter with a piglin until you get enderpearls"
         ,"Enchant your current item with Bane of Artheropods", "Get a Netherite Pick", "Create a TNT Cannon","Find Pigstep and Play It", "Find and mine coarse dirt",
         "Enter the Nether \(If you haven't already\) and find any biome");
