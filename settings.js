@@ -16,12 +16,14 @@
 
 document.getElementById("aloc").addEventListener('click', urlrepl);
 document.getElementById("chall").addEventListener('click', urlset);
+document.getElementById("settings").style.display = "none";
+document.getElementById("overlay").style.display = "none";
 
 var version = n("*").getUrlValues("v");
 var mode = n("*").getUrlValues("style");
 
 function hidesetoverlay() {
-    document.getElementById("settings").style.visibility = "hidden";
+    document.getElementById("settings").style.display = "none";
 }
 
 function refresh() {
@@ -36,11 +38,11 @@ function refresh() {
 }
 
 function urlset() {
-    document.getElementById("settings").style.visibility = "visible";
+    document.getElementById("settings").style.display = "block";
 }
 
 function urlrepl() {
-    document.getElementById("overlay").style.visibility = "visible";
+    document.getElementById("overlay").style.display = "block";
 }
 
 
