@@ -184,7 +184,7 @@ input {
 #overlay {
     transition-duration: 0.8s;
     position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
+    visibility: none; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */
     height: 100%; /* Full height (cover the whole page) */
     top: 0;
@@ -197,7 +197,7 @@ input {
 #settings {
     transition-duration: 0.8s;
     position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
+    visibility: none; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */
     height: 100%; /* Full height (cover the whole page) */
     top: 0;

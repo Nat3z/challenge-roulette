@@ -21,7 +21,7 @@ var version = n("*").getUrlValues("v");
 var mode = n("*").getUrlValues("style");
 
 function hidesetoverlay() {
-    document.getElementById("settings").style.display = "none";
+    document.getElementById("settings").style.visibility = "hidden";
 }
 
 function refresh() {
@@ -36,11 +36,11 @@ function refresh() {
 }
 
 function urlset() {
-    document.getElementById("settings").style.display = "block";
+    document.getElementById("settings").style.visibility = "visible";
 }
 
 function urlrepl() {
-    document.getElementById("overlay").style.display = "block";
+    document.getElementById("overlay").style.visibility = "visible";
 }
 
 
