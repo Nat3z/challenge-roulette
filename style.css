@@ -105,6 +105,7 @@ input, select {
 /* Edit Here */
 
 html {
+    transition-duration: 0.9s;
     color: white;
     position: relative;
     display: block;
@@ -148,6 +149,7 @@ div {
 }
 
 header {
+    transition-duration: 0.9s;
     background: #4e4e4e;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -161,6 +163,7 @@ a {
     color: gray;
 }
 .skip {
+    transition-duration: 0.7s;
     background: #3a76e6;
     color: white;
     border-radius: 8px;
@@ -177,4 +180,30 @@ input {
     top: 0;
     z-index: 10;
     background: #4e4e4e;
+}
+#overlay {
+    transition-duration: 0.8s;
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.575); /* Black background with opacity */
+    z-index: 11; /* Specify a stack order in case you're using a different order for other elements */
+}
+#settings {
+    transition-duration: 0.8s;
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.575); /* Black background with opacity */
+    z-index: 11; /* Specify a stack order in case you're using a different order for other elements */
 }

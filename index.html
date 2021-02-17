@@ -16,35 +16,61 @@
 <!doctype html>
 
 <html lang="en">
+<head>
     <link rel="stylesheet" href="./style.css">
     <meta property="og:url" content="https://nat3z.github.io/">
     <meta property="og:title" content="Challenge Roulette">
     <meta property="og:description" content="The Minecraft Challenge Roulette!">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#1f6db3">
-<head>
-    <meta charset="utf-8">
-    <title>Challenge Roulette</title>
-    <header id="sticky" class="stick">
-        <br>
-        <a style="float: left; color: white; text-decoration: none;" id="aloc"><h1 style="padding: 0px 20px 0px; font-size: 42px; cursor: pointer;">Challenge Roulette</h1></a>
-        <b style="text-decoration: none; color: rgb(184, 184, 184); float: left; font-size: 21px; cursor: pointer;" id="chall">Now With Skill-Based Challenges!</b>
-        <h2 style="color: #4e4e4e; visibility: hidden;" id="place">h</h2>
-        <h2 style="color: #4e4e4e; float: right; visibility: hidden;">a</h2>
-        <button class="start" id="st" style="float: right; left: -100%; width: 100px; cursor: pointer;"><br><h1>Start</h1><br></button>
-        <h2 style="color: #4e4e4e; float: right; visibility: hidden;">a</h2>
-        <button class="skip" id="sk" style="float: right; left: -100%; width: 100px; cursor: not-allowed; background: #7c0b0b;"><br><h1>Skip</h1><br></button>
-
-        <br id="delete">
-        <br id="delete">
-        <br id="delete">
-        <h2 style="color: #4e4e4e; visibility: hidden;" id="delete">a</h2>
-        <!--<hr id="hrthing">!-->
-    </header>
-    <br>
-
 </head>
+    <body>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.3">
+        <title>Challenge Roulette</title>
+        <header id="sticky" class="stick">
+            <br>
+            <h1 id="aloc" style="float: left; padding: 0px 20px 0px; font-size: 42px; cursor: help; text-decoration: underline;">Challenge Roulette</h1></a>
+            <b style="text-decoration: none; color: rgb(184, 184, 184); float: left; font-size: 21px; cursor: pointer;" id="chall">Settings</b>
+            <h2 style="color: #4e4e4e; visibility: hidden;" id="place">h</h2>
+            <h2 style="color: #4e4e4e; float: right; visibility: hidden;">a</h2>
+            <button class="start" id="st" style="float: right; left: -100%; width: 100px; cursor: pointer;"><br><h1>Start</h1><br></button>
+            <h2 style="color: #4e4e4e; float: right; visibility: hidden;">a</h2>
+            <button class="skip" id="sk" style="float: right; left: -100%; width: 100px; cursor: not-allowed; background: #7c0b0b;"><br><h1>Skip</h1><br></button>
+
+            <br id="delete">
+            <br id="delete">
+            <br id="delete">
+            <h2 style="color: #4e4e4e; visibility: hidden;" id="delete">a</h2>
+        </header>
+
+        <br>
+        <div id="overlay" onclick="hideoverlay()" style="cursor: default;">
+            <div style="background-color: #3a3a3a; font-size: 50px; width: 60%; margin: 0; justify-content: center; align-items: center; transform: translate(0, -50%); top: 50%;">
+                <br>
+                <h1>How To Play Challenge Roulette</h1>
+                <br>
+                <h1>This game is very simple! What you do is try and complete the most challenges with a very low amount of advancements completed.<br><br>If you are playing with another person, compare the amount of challenges and the one with the most completed wins!<br><br> To Start Playing, Press the "Start" Button At The Top Right and a Textbox will appear.<br><br> Finish the Challenge on Screen (Make sure you count the amount of advancements you completed) and type the amount of advancements completed in the textbox and press Continue.<br> <b>KEEP IN MIND</b><br> the amount of advancements recieved will remove that amount of challenges. If you want to skip, press the skip button HOWEVER you will lose 2 challenges.<br><br><h2 style="color: gray;">Click anywhere to close overlay</h2></h2>
+                <br>
+            </div>
+        </div>
+
+        <div id="settings" style="cursor: default;">
+            <div style="background-color: #3a3a3a; font-size: 50px; width: 60%; margin: 0; justify-content: center; align-items: center; transform: translate(0, -50%); top: 50%;">
+                <button style="float: right; border-radius: 3px; background-color: #3a3a3a; color:red;" onclick="hidesetoverlay()">X</button>
+                <br>
+                <h2>Settings</h2>
+                <br>
+                    <h1 onclick="changecolor()" style="text-decoration: underline; cursor: pointer;">Enable Light/Dark Mode</h1>
+                    <h1 style="display:inline-block; font-size: 19px;">Skip Confirmation</h1><input id="skipcon"type="checkbox" checked="true" style="display: inline-block; top: 8px; position: relative;">
+                <br>
+            </div>
+        </div>
+
+    <body>
 <script src="./script.js"></script>
+<script src="./settings.js"></script>
+
 <body>
 </body>
 </html>
